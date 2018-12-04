@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	xpub, err := a.wallet.Hsm.ImportKeyFromMnemonic(in.Alias, in.Password, in.Mnemonic, in.Language)
+	xpub, err := importKeyFromMnemonic( /*in.Alias, in.Password, */ in.Mnemonic)
 	if err != nil {
 		return
 	}

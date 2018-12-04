@@ -1,5 +1,5 @@
 # bytom-signer
 
-+ import key from mnemonic
++ import key from mnemonic (currently only support english)
 + derive key according to chainkd
 + sign the message according to sign-instructions
