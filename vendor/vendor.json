@@ -1,0 +1,71 @@
+{
+	"comment": "",
+	"ignore": "",
+	"package": [
+		{
+			"checksumSHA1": "yIkYzW7bzAD81zHyuCNmEj4+oxQ=",
+			"path": "github.com/gopherjs/gopherjs/js",
+			"revision": "d547d1d9531ed93dbdebcbff7f83e7c876a1e0ee",
+			"revisionTime": "2018-11-03T18:53:06Z"
+		},
+		{
+			"checksumSHA1": "sOROx/xUUi/a8+rt/zTasPzX5BE=",
+			"path": "github.com/johngb/langreg",
+			"revision": "5c6abc6d19d2a39ff139e0b234177b0508d69ea4",
+			"revisionTime": "2015-01-23T21:14:13Z"
+		},
+		{
+			"checksumSHA1": "BrYBe2DRifxETY14JmGBwL+m+mA=",
+			"path": "github.com/jtolds/gls",
+			"revision": "b4936e06046bbecbb94cae9c18127ebe510a2cb9",
+			"revisionTime": "2018-11-10T20:28:10Z"
+		},
+		{
+			"checksumSHA1": "oGvzOtIG3S9VCBaFFyFwn2vgB+w=",
+			"path": "github.com/smartystreets/assertions",
+			"revision": "b2de0cb4f26d0705483a2f495d89896d0b808573",
+			"revisionTime": "2018-09-27T18:05:07Z"
+		},
+		{
+			"checksumSHA1": "JrN6RhIUuhUtKpXeIxT6Xotxuag=",
+			"path": "github.com/smartystreets/assertions/internal/go-render/render",
+			"revision": "b2de0cb4f26d0705483a2f495d89896d0b808573",
+			"revisionTime": "2018-09-27T18:05:07Z"
+		},
+		{
+			"checksumSHA1": "r6FauVdOTFnwYQgrKGFuWUbIAJE=",
+			"path": "github.com/smartystreets/assertions/internal/oglematchers",
+			"revision": "b2de0cb4f26d0705483a2f495d89896d0b808573",
+			"revisionTime": "2018-09-27T18:05:07Z"
+		},
+		{
+			"checksumSHA1": "KruSVtcmb7757L2vSsw//VDAN58=",
+			"path": "github.com/smartystreets/assertions/internal/unit",
+			"revision": "b2de0cb4f26d0705483a2f495d89896d0b808573",
+			"revisionTime": "2018-09-27T18:05:07Z"
+		},
+		{
+			"checksumSHA1": "4Lslb4s7UjCrISZggqeLrRlfxSY=",
+			"path": "github.com/smartystreets/goconvey/convey",
+			"revision": "044398e4856c3a83fb98f9de0a8ed1c6495e2843",
+			"revisionTime": "2018-11-08T00:35:08Z"
+		},
+		{
+			"checksumSHA1": "vl/QM6Xmv+vE4rSAW6TBFEZ2JT4=",
+			"path": "github.com/smartystreets/goconvey/convey/gotest",
+			"revision": "044398e4856c3a83fb98f9de0a8ed1c6495e2843",
+			"revisionTime": "2018-11-08T00:35:08Z"
+		},
+		{
+			"checksumSHA1": "J8mvknBl+JDleyX1j7avU10DpnI=",
+			"path": "github.com/smartystreets/goconvey/convey/reporting",
+			"revision": "044398e4856c3a83fb98f9de0a8ed1c6495e2843",
+			"revisionTime": "2018-11-08T00:35:08Z"
+		},
+		{
+			"path": "golang.org/x/crypto/pbkdf2",
+			"revision": ""
+		}
+	],
+	"rootPath": "github.com/HAOYUatHZ/bytom-signer"
+}

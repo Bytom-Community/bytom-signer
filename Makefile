@@ -1,0 +1,1 @@
+PACKAGES    := $(shell go list ./... | grep -v '/vendor/')
