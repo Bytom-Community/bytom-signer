@@ -37,18 +37,20 @@ func main() {
 	}
 
 	log.Println("root XPub:", xprv.XPub())
-
-	// if len(path) > 0 {
-	// 	xprv = xprv.Derive(path)
-	// }
-	// return xprv.Sign(msg), nil
-
 	for i, instruction := range input.SigningInstructions {
 		log.Printf("SigningInstruction[%d]:", i)
+		path := make([][]byte, len(instruction.DerivationPath))
+		for _, o := range instruction.DerivationPath {
+			b, err := hex.DecodeString(o)
+			if err != nil {
+				log.Printf("err: %v", err)
+			}
 
-		key := xprv
+			path = append(path, b)
+		}
 
-		log.Printf("\tDerivedXPub:%v", key.XPub())
+		key := xprv.Derive(path)
+		log.Printf("\tDerivedXPub: %v", key.XPub())
 		for j, data := range instruction.SignData {
 			log.Printf("\tsign_data[%d]: %s", j, data)
 			b, err := hex.DecodeString(data)
