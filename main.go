@@ -12,7 +12,6 @@ import (
 	mnem "github.com/bytom/wallet/mnemonic"
 )
 
-// EntropyLength random entropy length to generate mnemonics.
 const EntropyLength = 128
 
 var (
@@ -20,7 +19,13 @@ var (
 )
 
 type Input struct {
-	Mnemonic string `json:"mnemonic"`
+	Mnemonic            string               `json:"mnemonic"`
+	SigningInstructions []SigningInstruction `json:"signing_instructions"`
+}
+
+type SigningInstruction struct {
+	DerivationPath []string   `json:"derivation_path"`
+	SignData       [][]string `json:"sign_data"`
 }
 
 func main() {
