@@ -1,7 +1,7 @@
 PACKAGES    := $(shell go list ./... | grep -v '/vendor/')
 
 all:
-	@echo "Building bytom-signer to ./bytom-signer"
-	@go build -o bytom-signer main.go
+	@echo "Building bytom-signer to bin/bytom-signer"
+	@go build -o bin/bytom-signer main.go
 
-.PHONY: all target release-all clean test benchmark
+.PHONY: all
