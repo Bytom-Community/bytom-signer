@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"encoding/hex"
 	"encoding/json"
 	"errors"
 	"log"
@@ -24,8 +25,8 @@ type Input struct {
 }
 
 type SigningInstruction struct {
-	DerivationPath []string   `json:"derivation_path"`
-	SignData       [][]string `json:"sign_data"`
+	DerivationPath []string `json:"derivation_path"`
+	SignData       []string `json:"sign_data"`
 }
 
 func main() {
@@ -35,14 +36,29 @@ func main() {
 		log.Fatal(err)
 	}
 
-	log.Println("XPub:", xprv.XPub())
+	log.Println("root XPub:", xprv.XPub())
 
-	return
-
-	// if err := txbuilder.Sign(ctx, &x.Txs, x.Password, a.pseudohsmSignTemplate); err != nil {
-	// 	log.WithField("build err", err).Error("fail on sign transaction.")
-	// 	return
+	// if len(path) > 0 {
+	// 	xprv = xprv.Derive(path)
 	// }
+	// return xprv.Sign(msg), nil
+
+	for i, instruction := range input.SigningInstructions {
+		log.Printf("SigningInstruction[%d]:", i)
+
+		key := xprv
+
+		log.Printf("\tDerivedXPub:%v", key.XPub())
+		for j, data := range instruction.SignData {
+			log.Printf("\tsign_data[%d]: %s", j, data)
+			b, err := hex.DecodeString(data)
+			if err != nil {
+				log.Printf("err: %v", err)
+			}
+
+			log.Printf("\tsigned: %v", hex.EncodeToString(key.Sign(b)))
+		}
+	}
 }
 
 func NewInput() *Input {
