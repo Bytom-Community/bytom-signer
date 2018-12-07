@@ -29,6 +29,10 @@ type SigningInstruction struct {
 	SignData       []string `json:"sign_data"`
 }
 
+type Signatures struct {
+	Signature []string
+}
+
 func main() {
 	input := NewInput()
 	xprv, err := importKeyFromMnemonic(input.Mnemonic)
@@ -40,13 +44,13 @@ func main() {
 	for i, instruction := range input.SigningInstructions {
 		log.Printf("SigningInstruction[%d]:", i)
 		path := make([][]byte, len(instruction.DerivationPath))
-		for _, o := range instruction.DerivationPath {
+		for j, o := range instruction.DerivationPath {
 			b, err := hex.DecodeString(o)
 			if err != nil {
 				log.Printf("err: %v", err)
 			}
 
-			path = append(path, b)
+			path[j] = b
 		}
 
 		key := xprv.Derive(path)
