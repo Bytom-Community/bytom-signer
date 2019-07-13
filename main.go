@@ -40,6 +40,7 @@ func main() {
 		log.Fatal(err)
 	}
 
+	log.Println("root XPrv:", xprv)
 	log.Println("root XPub:", xprv.XPub())
 	for i, instruction := range input.SigningInstructions {
 		log.Printf("SigningInstruction[%d]:", i)
@@ -63,6 +64,10 @@ func main() {
 			}
 
 			log.Printf("\tsigned: %v", hex.EncodeToString(key.Sign(b)))
+
+			if key.XPub().Verify(b, key.Sign(b)) {
+				log.Printf("\tsucess!")
+			}
 		}
 	}
 }
